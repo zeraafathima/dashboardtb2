@@ -1,9 +1,10 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
+st.set_page_config(layout='wide')
+st.header('Dashboard of TB by WHO')
 data=pd.read_csv('TB_Burden_Country.csv')
 st.write(data)
-
 options=st.sidebar.selectbox('Select Year',data['Year'].unique())
 df=data[data['Year']==options]
 st.write(df)
